@@ -1,0 +1,10 @@
+F:\Development\MonkeyGamerGUI\MonkeyGamerGUI\MonkeyGamerGUI\bin\Debug\MonkeyGamerGUI.exe.config
+F:\Development\MonkeyGamerGUI\MonkeyGamerGUI\MonkeyGamerGUI\bin\Debug\MonkeyGamerGUI.exe
+F:\Development\MonkeyGamerGUI\MonkeyGamerGUI\MonkeyGamerGUI\bin\Debug\MonkeyGamerGUI.pdb
+F:\Development\MonkeyGamerGUI\MonkeyGamerGUI\MonkeyGamerGUI\obj\Debug\MonkeyGamerGUI.csprojResolveAssemblyReference.cache
+F:\Development\MonkeyGamerGUI\MonkeyGamerGUI\MonkeyGamerGUI\obj\Debug\MonkeyGamerGUI.Form1.resources
+F:\Development\MonkeyGamerGUI\MonkeyGamerGUI\MonkeyGamerGUI\obj\Debug\MonkeyGamerGUI.Properties.Resources.resources
+F:\Development\MonkeyGamerGUI\MonkeyGamerGUI\MonkeyGamerGUI\obj\Debug\MonkeyGamerGUI.csproj.GenerateResource.Cache
+F:\Development\MonkeyGamerGUI\MonkeyGamerGUI\MonkeyGamerGUI\obj\Debug\MonkeyGamerGUI.exe
+F:\Development\MonkeyGamerGUI\MonkeyGamerGUI\MonkeyGamerGUI\obj\Debug\MonkeyGamerGUI.pdb
+F:\Development\MonkeyGamerGUI\MonkeyGamerGUI\MonkeyGamerGUI\bin\Debug\InputManager.dll
