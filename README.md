@@ -15,3 +15,5 @@ should work because the library used for input emulation is completely compatibl
 input.
 
 The only external dependency is the .NET Framework, v3.5 or newer.
+
+DOWNLOADABLE ZIP (updated 2014-02-15): https://mega.co.nz/#!U4VTmBRS!dCSdbaH5udnv5TjzkEEwelX_PAhyu8OTj8hakekfPVM
