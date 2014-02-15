@@ -1,6 +1,6 @@
 MonkeyPlayer
 ============
-![Screenshot](http://i.imgur.com/JqkoV2e.png)
+![Screenshot](http://i.imgur.com/EQnkshc.png)
 
 A .NET application designed to play games via random keypresses and mouse movements.
 
