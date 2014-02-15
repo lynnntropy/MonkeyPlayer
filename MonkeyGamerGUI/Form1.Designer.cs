@@ -38,18 +38,18 @@
             this.mouseClickCheckbox = new System.Windows.Forms.CheckBox();
             this.mouseMovementCheckbox = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.keyHoldDurationPicker = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.keystrokeDelayPicker = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.keystrokeNumberPicker = new System.Windows.Forms.NumericUpDown();
             this.startEmulationButton = new System.Windows.Forms.Button();
-            this.keyHoldDurationPicker = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.keyHoldDurationPicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.keystrokeDelayPicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.keystrokeNumberPicker)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.keyHoldDurationPicker)).BeginInit();
             this.SuspendLayout();
             // 
             // testListView
@@ -150,6 +150,29 @@
             this.groupBox2.Text = "Emulation preferences";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 74);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(269, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Key hold duration (in seconds - 0 means instant release)";
+            // 
+            // keyHoldDurationPicker
+            // 
+            this.keyHoldDurationPicker.DecimalPlaces = 3;
+            this.keyHoldDurationPicker.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            196608});
+            this.keyHoldDurationPicker.Location = new System.Drawing.Point(303, 72);
+            this.keyHoldDurationPicker.Name = "keyHoldDurationPicker";
+            this.keyHoldDurationPicker.Size = new System.Drawing.Size(51, 20);
+            this.keyHoldDurationPicker.TabIndex = 4;
+            this.keyHoldDurationPicker.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -209,29 +232,6 @@
             this.startEmulationButton.UseVisualStyleBackColor = true;
             this.startEmulationButton.Click += new System.EventHandler(this.startEmulationButton_Click);
             // 
-            // keyHoldDurationPicker
-            // 
-            this.keyHoldDurationPicker.DecimalPlaces = 3;
-            this.keyHoldDurationPicker.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            196608});
-            this.keyHoldDurationPicker.Location = new System.Drawing.Point(303, 72);
-            this.keyHoldDurationPicker.Name = "keyHoldDurationPicker";
-            this.keyHoldDurationPicker.Size = new System.Drawing.Size(51, 20);
-            this.keyHoldDurationPicker.TabIndex = 4;
-            this.keyHoldDurationPicker.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 74);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(269, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Key hold duration (in seconds - 0 means instant release)";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,15 +247,15 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MonkeyTyper 2.0";
+            this.Text = "MonkeyPlayer 2.0";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.keyHoldDurationPicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.keystrokeDelayPicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.keystrokeNumberPicker)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.keyHoldDurationPicker)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
