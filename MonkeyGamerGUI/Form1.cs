@@ -16,7 +16,9 @@ namespace MonkeyGamerGUI
     public partial class Form1 : Form
     {
         private bool isRecordingInput = false;
-        private List<int> keysToEmulate;       
+        private List<int> keysToEmulate;
+        private bool isEmulatingInput = false;
+        private System.Threading.Thread emulationThread;
 
         public Form1()
         {
@@ -87,16 +89,47 @@ namespace MonkeyGamerGUI
 
         private void startEmulationButton_Click(object sender, EventArgs e)
         {
-            // What to do when user clicks final button :D
-            EmulateInput(
-                (int)keystrokeNumberPicker.Value,
-                (float)keystrokeDelayPicker.Value,
-                keysToEmulate,
-                mouseMovementCheckbox.Checked,
-                mouseClickCheckbox.Checked,
-                scrollWheelCheckbox.Checked,
-                (float)keyHoldDurationPicker.Value
-                );
+            
+
+            if (!isEmulatingInput)
+            {
+                isEmulatingInput = true;
+                
+                startEmulationButton.Text = "Stop Emulating";
+                // What to do when user clicks final button :D
+                /*EmulateInput(
+                    (int)keystrokeNumberPicker.Value,
+                    (float)keystrokeDelayPicker.Value,
+                    keysToEmulate,
+                    mouseMovementCheckbox.Checked,
+                    mouseClickCheckbox.Checked,
+                    scrollWheelCheckbox.Checked,
+                    (float)keyHoldDurationPicker.Value
+                    );*/
+
+                emulationThread = new System.Threading.Thread(delegate()
+                {
+                    EmulateInput(
+                    (int)keystrokeNumberPicker.Value,
+                    (float)keystrokeDelayPicker.Value,
+                    keysToEmulate,
+                    mouseMovementCheckbox.Checked,
+                    mouseClickCheckbox.Checked,
+                    scrollWheelCheckbox.Checked,
+                    (float)keyHoldDurationPicker.Value
+                    );
+                });
+
+                emulationThread.Start();
+            }
+            else if (isEmulatingInput)
+            {
+                isEmulatingInput = false;
+
+                startEmulationButton.Text = "Begin Emulating";
+
+                emulationThread.Abort();
+            }
         }
 
         void EmulateInput(int numberOfKeystrokes, float keystrokeDelay, List<int> keyCodesToEmulate,
