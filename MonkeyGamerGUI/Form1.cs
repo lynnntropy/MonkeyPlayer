@@ -24,6 +24,8 @@ namespace MonkeyGamerGUI
 
         public string lastLogItem = "";
 
+        //public int randomSeed = 1234567890;
+
         public Form1()
         {
             InitializeComponent();
@@ -114,7 +116,8 @@ namespace MonkeyGamerGUI
                     mouseMovementCheckbox.Checked,
                     mouseClickCheckbox.Checked,
                     scrollWheelCheckbox.Checked,
-                    (float)keyHoldDurationPicker.Value
+                    (float)keyHoldDurationPicker.Value,
+                    Convert.ToInt32(randomSeedTextBox.Text)
                     );
                 });
 
@@ -134,7 +137,7 @@ namespace MonkeyGamerGUI
         }
 
         void EmulateInput(int numberOfKeystrokes, float keystrokeDelay, List<int> keyCodesToEmulate,
-            bool mouseMovement, bool mouseClicks, bool scrollWheel, float keyHoldDuration)
+            bool mouseMovement, bool mouseClicks, bool scrollWheel, float keyHoldDuration, int randomSeed)
         {
             // Main emulation function!
 
@@ -143,7 +146,7 @@ namespace MonkeyGamerGUI
 
             ///////////
 
-            Random instanceOfRandom = new Random();
+            Random instanceOfRandom = new Random(randomSeed);
             int mouseClickChance = 25;
             int mouseScrollChance = 25;
             int mouseMoveChance = 25;

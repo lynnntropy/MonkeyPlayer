@@ -47,6 +47,8 @@
             this.startEmulationButton = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.mainWindowStatusBar = new System.Windows.Forms.ToolStripStatusLabel();
+            this.randomSeedTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.keyHoldDurationPicker)).BeginInit();
@@ -228,7 +230,7 @@
             // 
             // startEmulationButton
             // 
-            this.startEmulationButton.Location = new System.Drawing.Point(12, 476);
+            this.startEmulationButton.Location = new System.Drawing.Point(12, 503);
             this.startEmulationButton.Name = "startEmulationButton";
             this.startEmulationButton.Size = new System.Drawing.Size(360, 23);
             this.startEmulationButton.TabIndex = 7;
@@ -240,7 +242,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mainWindowStatusBar});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 504);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 529);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(384, 22);
             this.statusStrip1.TabIndex = 8;
@@ -252,11 +254,30 @@
             this.mainWindowStatusBar.Size = new System.Drawing.Size(157, 17);
             this.mainWindowStatusBar.Text = "Emulation hasn\'t started yet.";
             // 
+            // randomSeedTextBox
+            // 
+            this.randomSeedTextBox.Location = new System.Drawing.Point(184, 476);
+            this.randomSeedTextBox.Name = "randomSeedTextBox";
+            this.randomSeedTextBox.Size = new System.Drawing.Size(188, 20);
+            this.randomSeedTextBox.TabIndex = 9;
+            this.randomSeedTextBox.Text = "1234567890";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 479);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(166, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Random seed (must be a number)";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 526);
+            this.ClientSize = new System.Drawing.Size(384, 551);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.randomSeedTextBox);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.startEmulationButton);
             this.Controls.Add(this.groupBox2);
@@ -305,6 +326,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel mainWindowStatusBar;
+        private System.Windows.Forms.TextBox randomSeedTextBox;
+        private System.Windows.Forms.Label label5;
     }
 }
 
