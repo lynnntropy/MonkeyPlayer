@@ -45,11 +45,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.keystrokeNumberPicker = new System.Windows.Forms.NumericUpDown();
             this.startEmulationButton = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.mainWindowStatusBar = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.keyHoldDurationPicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.keystrokeDelayPicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.keystrokeNumberPicker)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // testListView
@@ -57,6 +60,7 @@
             this.testListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.keyNameColumn,
             this.keyCodeheader});
+            this.testListView.FullRowSelect = true;
             this.testListView.Location = new System.Drawing.Point(12, 27);
             this.testListView.Name = "testListView";
             this.testListView.Size = new System.Drawing.Size(360, 208);
@@ -232,11 +236,28 @@
             this.startEmulationButton.UseVisualStyleBackColor = true;
             this.startEmulationButton.Click += new System.EventHandler(this.startEmulationButton_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mainWindowStatusBar});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 504);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(384, 22);
+            this.statusStrip1.TabIndex = 8;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // mainWindowStatusBar
+            // 
+            this.mainWindowStatusBar.Name = "mainWindowStatusBar";
+            this.mainWindowStatusBar.Size = new System.Drawing.Size(157, 17);
+            this.mainWindowStatusBar.Text = "Emulation hasn\'t started yet.";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 511);
+            this.ClientSize = new System.Drawing.Size(384, 526);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.startEmulationButton);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -256,6 +277,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.keyHoldDurationPicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.keystrokeDelayPicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.keystrokeNumberPicker)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,6 +303,8 @@
         private System.Windows.Forms.Button startEmulationButton;
         private System.Windows.Forms.NumericUpDown keyHoldDurationPicker;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel mainWindowStatusBar;
     }
 }
 

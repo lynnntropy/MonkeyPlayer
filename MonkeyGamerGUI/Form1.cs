@@ -20,6 +20,10 @@ namespace MonkeyGamerGUI
         private bool isEmulatingInput = false;
         private System.Threading.Thread emulationThread;
 
+        public Form logWindowForm;
+
+        public string lastLogItem = "";
+
         public Form1()
         {
             InitializeComponent();
@@ -94,18 +98,12 @@ namespace MonkeyGamerGUI
             if (!isEmulatingInput)
             {
                 isEmulatingInput = true;
+                mainWindowStatusBar.Text = "Starting emulation!";
                 
                 startEmulationButton.Text = "Stop Emulating";
-                // What to do when user clicks final button :D
-                /*EmulateInput(
-                    (int)keystrokeNumberPicker.Value,
-                    (float)keystrokeDelayPicker.Value,
-                    keysToEmulate,
-                    mouseMovementCheckbox.Checked,
-                    mouseClickCheckbox.Checked,
-                    scrollWheelCheckbox.Checked,
-                    (float)keyHoldDurationPicker.Value
-                    );*/
+
+                //logWindowForm = new LogWindowForm();
+                //logWindowForm.Show();
 
                 emulationThread = new System.Threading.Thread(delegate()
                 {
@@ -125,6 +123,9 @@ namespace MonkeyGamerGUI
             else if (isEmulatingInput)
             {
                 isEmulatingInput = false;
+                mainWindowStatusBar.Text = "Emulation stopped.";
+
+                //logWindowForm.Close();
 
                 startEmulationButton.Text = "Begin Emulating";
 
@@ -179,18 +180,26 @@ namespace MonkeyGamerGUI
 
                     if (keyCodesToEmulate.Count > 0) // only emulate if there's something to emulate
                     {
+                        //ListViewItem existingItem = testListView.FindItemWithText(((Keys)currentKeyCode).ToString());
+
                         if (keyHoldDuration == 0) // code for instant release
                         {
+
+                            SelectListItem(((Keys)currentKeyCode).ToString(), true);
+
                             Keyboard.KeyDown((Keys)currentKeyCode);
                             System.Diagnostics.Debug.WriteLine("Pressed key " + ((Keys)currentKeyCode).ToString());
                             //System.Threading.Thread.Sleep(1000);
                             Keyboard.KeyUp((Keys)currentKeyCode);
                             System.Diagnostics.Debug.WriteLine("Released key " + ((Keys)currentKeyCode).ToString());
+
+                            SelectListItem(((Keys)currentKeyCode).ToString(), false);
                         }
                         else if (keyHoldDuration > 0) // holding code
                         {
                             System.Diagnostics.Debug.WriteLine("Holding key " + ((Keys)currentKeyCode).ToString() + " for " + keyHoldDuration + " seconds");
-                            
+                            SelectListItem(((Keys)currentKeyCode).ToString(), true);
+
                             Stopwatch s = new Stopwatch();
                             s.Start();
                             while (s.Elapsed < TimeSpan.FromSeconds(keyHoldDuration))
@@ -202,6 +211,7 @@ namespace MonkeyGamerGUI
                             s.Stop();
 
                             Keyboard.KeyUp((Keys)currentKeyCode);
+                            SelectListItem(((Keys)currentKeyCode).ToString(), false);
 
                             System.Diagnostics.Debug.WriteLine("Done holding key " + ((Keys)currentKeyCode).ToString());
 
@@ -315,6 +325,21 @@ namespace MonkeyGamerGUI
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void SelectListItem(string itemName, bool selected)
+        {
+            this.Invoke((MethodInvoker)delegate
+            {
+                ListViewItem existingItem = testListView.FindItemWithText(itemName);
+                existingItem.Selected = selected;
+
+                mainWindowStatusBar.Text = "Pressing button: " + itemName;
+
+                //LogWindowForm currentLogWindow = (LogWindowForm)logWindowForm;               
+            });   
+         
+            
         }
     }
 

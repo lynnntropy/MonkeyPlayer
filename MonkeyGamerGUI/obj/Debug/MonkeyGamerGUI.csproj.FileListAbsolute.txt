@@ -8,3 +8,4 @@ F:\Development\MonkeyGamerGUI\MonkeyGamerGUI\MonkeyGamerGUI\obj\Debug\MonkeyGame
 F:\Development\MonkeyGamerGUI\MonkeyGamerGUI\MonkeyGamerGUI\obj\Debug\MonkeyGamerGUI.exe
 F:\Development\MonkeyGamerGUI\MonkeyGamerGUI\MonkeyGamerGUI\obj\Debug\MonkeyGamerGUI.pdb
 F:\Development\MonkeyGamerGUI\MonkeyGamerGUI\MonkeyGamerGUI\bin\Debug\InputManager.dll
+F:\Development\MonkeyGamerGUI\MonkeyGamerGUI\MonkeyGamerGUI\obj\Debug\MonkeyGamerGUI.LogWindowForm.resources
