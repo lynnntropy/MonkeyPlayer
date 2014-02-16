@@ -16,4 +16,4 @@ input.
 
 The only external dependency is the .NET Framework, v3.5 or newer.
 
-DOWNLOADABLE ZIP (updated 2014-02-16): https://mega.co.nz/#!Yp0EHQ4R!R66eBsjAE2XaOOhjFsybtAy34KQbOVAaBUoQSsK42_Q
+DOWNLOADABLE ZIP (updated 2014-02-16): https://mega.co.nz/#!VlFHULgQ!pCzAzEWiOo4PtvDFFO2KqxQXIgemgwEjie3p2etuoEw
